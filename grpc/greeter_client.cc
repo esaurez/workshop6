@@ -88,9 +88,11 @@ int main(int argc, char** argv) {
   // (use of InsecureChannelCredentials()).
   GreeterClient greeter(grpc::CreateChannel(
       "localhost:50051", grpc::InsecureChannelCredentials()));
-  std::string user("world");
-  std::string reply = greeter.SayHello(user);
-  std::cout << "Greeter received: " << reply << std::endl;
+
+  std::string input;
+  std::getline(std::cin, input);
+  std::string reply = greeter.SayHello(input);
+  std::cout << "Received: " << reply << std::endl;
 
   return 0;
 }
