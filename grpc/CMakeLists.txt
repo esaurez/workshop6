@@ -39,6 +39,6 @@ include_directories(${GENERATED_PROTOBUF_PATH})
 link_libraries(grpc++_unsecure grpc gpr ${PROTOBUF_LIBRARY})
 
 add_executable(greeter_server greeter_server.cc ${GENERATED_PROTOBUF_FILES})
-add_executable(greeter_client greeter_client.cc ${GENERATED_PROTOBUF_FILES})
+add_executable(greeter_client greeter_client.cc ${GENERATED_PROTOBUF_FILES} master_data_structures.cc)
 #add_executable(greeter_async_server src/greeter_async_server.cc ${GENERATED_PROTOBUF_FILES})
 #add_executable(greeter_async_client src/greeter_async_client.cc ${GENERATED_PROTOBUF_FILES})

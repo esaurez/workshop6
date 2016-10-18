@@ -52,7 +52,7 @@ class GreeterServiceImpl final : public Greeter::Service {
   Status SayHello(ServerContext* context, const HelloRequest* request,
                   HelloReply* reply) override {
     std::string postfix(" GATech");
-    std::cout << "Received " << request.name();
+    std::cout << "Received " << request->name();
     reply->set_message(request->name() + postfix);
     return Status::OK;
   }
