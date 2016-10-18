@@ -51,8 +51,9 @@ using helloworld::Greeter;
 class GreeterServiceImpl final : public Greeter::Service {
   Status SayHello(ServerContext* context, const HelloRequest* request,
                   HelloReply* reply) override {
-    std::string prefix("Hello ");
-    reply->set_message(prefix + request->name());
+    std::string postfix(" GATech");
+    std::cout << "Received " << request->name();
+    reply->set_message(request->name() + postfix);
     return Status::OK;
   }
 };
